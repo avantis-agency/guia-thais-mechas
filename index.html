@@ -117,6 +117,7 @@ body{
 .phase-card[data-phase="pos"] .phase-icon{background:rgba(160,140,200,.12);color:#b0a0d0}
 .phase-card[data-phase="objecoes"] .phase-icon{background:rgba(212,122,122,.12);color:var(--danger)}
 .phase-card[data-phase="followup"] .phase-icon{background:rgba(100,160,200,.12);color:#6ab0d0}
+.phase-card[data-phase="feedback"] .phase-icon{background:rgba(200,170,80,.12);color:#d4b95c}
 .phase-card[data-phase="utils"] .phase-icon{background:rgba(201,168,76,.08);color:var(--accent-dark)}
 .phase-card.full-width{grid-column:1/-1}
 
@@ -371,6 +372,12 @@ body{
       <div class="phase-count">2h, 24h, 3 dias</div>
     </div>
 
+    <div class="phase-card" data-phase="feedback" onclick="showPhase('feedback')">
+      <div class="phase-icon">&#9734;</div>
+      <div class="phase-label">P&oacute;s-procedimento</div>
+      <div class="phase-count">Feedback 24-48h depois</div>
+    </div>
+
     <div class="phase-card" data-phase="utils" onclick="showPhase('utils')">
       <div class="phase-icon">&#9881;</div>
       <div class="phase-label">Utilidades</div>
@@ -399,6 +406,7 @@ body{
     <div class="funnel-step-mini"><span class="step-num">5</span><span class="step-text"><strong>Confirmação</strong> — mensagem com data, hora, endereço completo</span></div>
     <div class="funnel-step-mini"><span class="step-num">6</span><span class="step-text"><strong>Lembrete</strong> — 1 dia antes, confirma presença</span></div>
     <div class="funnel-step-mini"><span class="step-num">7</span><span class="step-text"><strong>Serviço no salão</strong> — Mechas Plex + Finalização com a equipe do Marcio</span></div>
+    <div class="funnel-step-mini"><span class="step-num">8</span><span class="step-text"><strong>Pós-procedimento</strong> — 24-48h depois: feedback, avaliação Google e indicação</span></div>
   </div>
 
   <div class="note-box" style="margin-top:12px">
@@ -779,6 +787,96 @@ Se tiver interesse, é só me avisar que vejo os horários disponíveis pra voc�
 
 Não vou mais insistir, mas se decidir, pode me chamar que vejo se ainda tem disponibilidade. Foi um prazer falar com você!</div>
       <button class="copy-btn" onclick="copyScript('fu3',this)">Copiar</button>
+    </div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ -->
+<!-- PHASE: PÓS-PROCEDIMENTO              -->
+<!-- ═══════════════════════════════════ -->
+<div class="phase-view" id="phase-feedback">
+  <div class="back-bar">
+    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
+    <span class="phase-title">P&oacute;s-procedimento</span>
+  </div>
+
+  <div class="section-intro">Mensagens para enviar 24 a 48 horas ap&oacute;s o procedimento. Coleta feedback, fortalece o v&iacute;nculo e abre porta pra indica&ccedil;&atilde;o.</div>
+
+  <div class="script-card open">
+    <div class="script-card-header" onclick="toggleCard(this)">
+      <span class="sc-num">1</span>
+      <h3>Feedback (24h depois)</h3>
+      <span class="sc-arrow">&#9662;</span>
+    </div>
+    <div class="script-card-body"><div class="script-card-content">
+      <div class="script-block" id="fb1">Oi, [nome]! Tudo bem? Passando pra saber como você tá curtindo as mechas!
+
+Como ficou o cabelo depois de lavar em casa? Tá gostando do resultado?
+
+Sua opinião é muito importante pra gente.</div>
+      <button class="copy-btn" onclick="copyScript('fb1',this)">Copiar</button>
+
+      <div class="guide-box">
+        <div class="item">&#x1F7E2; Respondeu positivo = use o script 2 (pedir avalia&ccedil;&atilde;o)</div>
+        <div class="item">&#x1F7E1; Respondeu com ressalva = acolha, pergunte o que incomodou, ofere&ccedil;a falar com a equipe</div>
+        <div class="item">&#x1F534; Respondeu negativo = acolha, pe&ccedil;a desculpas e ofere&ccedil;a solu&ccedil;&atilde;o (ver script 4)</div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-card-header" onclick="toggleCard(this)">
+      <span class="sc-num">2</span>
+      <h3>Feedback positivo &mdash; pedir avalia&ccedil;&atilde;o</h3>
+      <span class="sc-arrow">&#9662;</span>
+    </div>
+    <div class="script-card-body"><div class="script-card-content">
+      <div class="script-block" id="fb2">Que bom saber, [nome]! Fico muito feliz que tenha gostado.
+
+Se puder deixar uma avaliaçãozinha pra gente no Google, ajuda demais. É rapidinho, só clicar aqui:
+
+[link da avaliação Google]
+
+Obrigada de coração!</div>
+      <button class="copy-btn" onclick="copyScript('fb2',this)">Copiar</button>
+
+      <div class="note-box">
+        <strong>Substitua [link da avalia&ccedil;&atilde;o Google]</strong> pelo link direto de avalia&ccedil;&atilde;o do Google Maps da W7M New Concept. Pe&ccedil;a esse link ao gestor se n&atilde;o tiver.
+      </div>
+    </div></div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-card-header" onclick="toggleCard(this)">
+      <span class="sc-num">3</span>
+      <h3>Indica&ccedil;&atilde;o</h3>
+      <span class="sc-arrow">&#9662;</span>
+    </div>
+    <div class="script-card-body"><div class="script-card-content">
+      <div class="script-block" id="fb3">[nome], se tiver alguma amiga que também queira fazer mechas com a equipe do Marcio, pode mandar falar comigo! Ainda temos vagas na ação até dia 15 de agosto.</div>
+      <button class="copy-btn" onclick="copyScript('fb3',this)">Copiar</button>
+
+      <div class="note-box">
+        <strong>Timing:</strong> Envie essa mensagem logo ap&oacute;s o feedback positivo, na mesma conversa. Se a cliente respondeu bem, esse &eacute; o melhor momento pra pedir indica&ccedil;&atilde;o.
+      </div>
+    </div></div>
+  </div>
+
+  <div class="script-card">
+    <div class="script-card-header" onclick="toggleCard(this)">
+      <span class="sc-num">4</span>
+      <h3>Feedback negativo &mdash; acolher e resolver</h3>
+      <span class="sc-arrow">&#9662;</span>
+    </div>
+    <div class="script-card-body"><div class="script-card-content">
+      <div class="script-block" id="fb4">[nome], sinto muito que não tenha ficado como você esperava. Sua satisfação é muito importante pra gente.
+
+Pode me contar o que te incomodou? Vou falar com a equipe do Marcio pra ver a melhor forma de resolver isso pra você.</div>
+      <button class="copy-btn" onclick="copyScript('fb4',this)">Copiar</button>
+
+      <div class="note-box">
+        <strong>Nunca discuta com a cliente.</strong> Acolha, registre a queixa e repasse pro gestor ou pra equipe do Marcio. N&atilde;o prometa retoque ou reembolso por conta pr&oacute;pria.
+      </div>
     </div></div>
   </div>
 </div>
