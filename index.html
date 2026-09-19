@@ -1,999 +1,964 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Guia de Atendimento — W7M New Concept</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#1a1a1a;
-  --bg-deep:#151515;
-  --bg-card:#2a2a2a;
-  --bg-card-hover:#333333;
-  --bg-script:#252525;
-  --border:#3a3a3a;
-  --border-light:#333;
-  --text:#f2f0ed;
-  --text-muted:#9a968f;
-  --text-light:#6a665f;
-  --accent:#c9a84c;
-  --accent-dark:#a8892e;
-  --accent-light:#e0c96e;
-  --success:#7ab882;
-  --warning:#d4b95c;
-  --danger:#d47a7a;
-  --white:#fff;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:var(--bg);color:var(--text);
-  font-size:15px;line-height:1.65;
-  min-height:100vh;min-height:100dvh;
-  overflow-x:hidden;
-  padding-bottom:env(safe-area-inset-bottom,0);
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151412">
+  <meta name="description" content="Guia comercial copia e cola para o atendimento da campanha de Mechas + Finalização da W7M Barra da Tijuca.">
+  <title>Guia comercial da Taís | W7M Barra da Tijuca</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151412'/%3E%3Cpath d='M13 18l8 29 11-19 11 19 8-29' fill='none' stroke='%23d2ad55' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #151412;
+      --bg-raised: #1d1b18;
+      --surface: #26231f;
+      --surface-hover: #302c27;
+      --script: #1b1a18;
+      --line: #3e3932;
+      --line-soft: #312e29;
+      --text: #f5f0e7;
+      --muted: #b8b0a3;
+      --dim: #847c70;
+      --gold: #d2ad55;
+      --gold-light: #f0d88a;
+      --gold-dark: #a67e2e;
+      --success: #77b58a;
+      --warning: #e0b85d;
+      --danger: #df8580;
+      --shadow: 0 18px 48px rgba(0, 0, 0, .25);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
 
-/* ══ HEADER ══ */
-.app-header{
-  text-align:center;
-  padding:32px 20px 24px;
-  background:linear-gradient(180deg,#222 0%,var(--bg) 100%);
-  border-bottom:1px solid var(--border);
-  position:relative;
-}
-.app-header .brand{
-  font-family:'Playfair Display',serif;font-size:11px;font-weight:400;
-  letter-spacing:.35em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;
-}
-.app-header h1{
-  font-family:'Playfair Display',serif;font-size:24px;font-weight:600;color:var(--text);
-  letter-spacing:.02em;
-}
-.app-header .subtitle{
-  font-size:13px;color:var(--text-muted);margin-top:8px;line-height:1.5;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-width: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(210, 173, 85, .11), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 1rem;
+      line-height: 1.62;
+    }
+    button { font: inherit; }
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+    [hidden] { display: none !important; }
 
-/* ══ BANNER VAGAS ══ */
-.vagas-banner{
-  background:linear-gradient(135deg,#2a2210,#3a3018);
-  border-bottom:1px solid rgba(201,168,76,.25);
-  color:var(--text);padding:18px 20px;text-align:center;
-}
-.vagas-banner h2{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;margin-bottom:4px;color:var(--accent-light)}
-.vagas-banner p{font-size:13px;color:var(--text-muted);margin-bottom:10px}
-.vagas-pill{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
-  border-radius:20px;padding:8px 18px;
-  font-size:15px;font-weight:700;color:var(--accent);
-}
-.vagas-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--success);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .shell { width: min(100%, 74rem); margin: 0 auto; }
+    .app-header {
+      padding: 2rem 1rem 1.4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--line-soft);
+      background: linear-gradient(180deg, rgba(38, 35, 31, .84), rgba(21, 20, 18, .72));
+    }
+    .brand {
+      margin: 0 0 .35rem;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .app-header h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 6vw, 2.55rem);
+      font-weight: 600;
+      line-height: 1.16;
+    }
+    .app-header p {
+      max-width: 42rem;
+      margin: .6rem auto 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
 
-/* ══ PHASE GRID (home view) ══ */
-.phase-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  padding:16px;
-  max-width:640px;
-  margin:0 auto;
-}
-.phase-card{
-  background:var(--bg-card);
-  border:1px solid var(--border-light);
-  border-radius:16px;
-  padding:20px 16px;
-  text-align:center;
-  cursor:pointer;
-  transition:all .2s ease;
-  -webkit-tap-highlight-color:transparent;
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  min-height:120px;justify-content:center;
-  position:relative;overflow:hidden;
-}
-.phase-card:active{transform:scale(.96);background:var(--bg-card-hover)}
-.phase-card .phase-icon{
-  width:44px;height:44px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:20px;flex-shrink:0;
-}
-.phase-card .phase-label{
-  font-family:'Playfair Display',serif;font-size:13.5px;font-weight:600;
-  color:var(--text);letter-spacing:.01em;line-height:1.35;
-}
-.phase-card .phase-count{
-  font-size:11px;color:var(--text-muted);font-weight:400;
-}
-/* Phase colors */
-.phase-card[data-phase="funil"] .phase-icon{background:rgba(201,168,76,.12);color:var(--accent)}
-.phase-card[data-phase="contato"] .phase-icon{background:rgba(122,184,130,.12);color:var(--success)}
-.phase-card[data-phase="detalhes"] .phase-icon{background:rgba(212,185,92,.12);color:var(--warning)}
-.phase-card[data-phase="confirmacao"] .phase-icon{background:rgba(201,168,76,.12);color:var(--accent)}
-.phase-card[data-phase="pos"] .phase-icon{background:rgba(160,140,200,.12);color:#b0a0d0}
-.phase-card[data-phase="objecoes"] .phase-icon{background:rgba(212,122,122,.12);color:var(--danger)}
-.phase-card[data-phase="followup"] .phase-icon{background:rgba(100,160,200,.12);color:#6ab0d0}
-.phase-card[data-phase="feedback"] .phase-icon{background:rgba(200,170,80,.12);color:#d4b95c}
-.phase-card[data-phase="utils"] .phase-icon{background:rgba(201,168,76,.08);color:var(--accent-dark)}
-.phase-card.full-width{grid-column:1/-1}
+    .offer-strip {
+      border-bottom: 1px solid rgba(210, 173, 85, .24);
+      background: linear-gradient(135deg, rgba(166, 126, 46, .2), rgba(38, 35, 31, .82));
+      padding: 1.15rem 1rem;
+      text-align: center;
+    }
+    .offer-strip strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 4.3vw, 1.35rem);
+      font-weight: 600;
+    }
+    .offer-strip span { color: var(--muted); font-size: .9rem; }
 
-/* ══ PHASE VIEW (detail) ══ */
-.phase-view{
-  display:none;
-  max-width:640px;margin:0 auto;
-  padding:0 16px 120px;
-  animation:slideIn .3s ease;
-}
-.phase-view.active{display:block}
-@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    main { min-height: 64vh; }
+    .home { padding: 1rem 1rem 4rem; }
+    .quick-start {
+      display: grid;
+      gap: .75rem;
+      max-width: 56rem;
+      margin: 0 auto 1rem;
+    }
+    .intro-card, .assumption-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, rgba(48, 44, 39, .78), rgba(29, 27, 24, .94));
+      box-shadow: var(--shadow);
+      padding: 1.15rem;
+    }
+    .intro-card h2, .assumption-card h2 {
+      margin: 0 0 .35rem;
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .intro-card p, .assumption-card p { margin: 0; color: var(--muted); }
+    .assumption-card ul { margin: .75rem 0 0; padding-left: 1.15rem; color: var(--muted); }
+    .assumption-card li + li { margin-top: .45rem; }
 
-/* Back bar */
-.back-bar{
-  position:sticky;top:0;z-index:50;
-  background:rgba(26,26,26,.95);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  padding:12px 0;margin:0 -16px;padding-left:16px;padding-right:16px;
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;gap:12px;
-  box-shadow:0 2px 12px rgba(0,0,0,.3);
-}
-.back-btn{
-  display:flex;align-items:center;gap:6px;
-  background:none;border:1px solid var(--border);
-  border-radius:10px;padding:10px 14px;
-  font-family:'Inter',sans-serif;font-size:14px;font-weight:500;
-  color:var(--accent);cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
-  transition:all .15s ease;min-height:44px;
-}
-.back-btn:active{background:var(--bg-script);transform:scale(.97)}
-.back-bar .phase-title{
-  font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--text);
-  flex:1;
-}
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+    .phase-card {
+      display: flex;
+      min-width: 0;
+      min-height: 8.25rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .85rem;
+      padding: 1rem;
+      cursor: pointer;
+      color: var(--text);
+      text-align: left;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .15);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .phase-card:hover { border-color: rgba(210, 173, 85, .55); background: var(--surface-hover); }
+    .phase-card:active { transform: scale(.98); }
+    .phase-number {
+      display: grid;
+      width: 2.25rem;
+      height: 2.25rem;
+      place-items: center;
+      border-radius: .7rem;
+      background: rgba(210, 173, 85, .12);
+      color: var(--gold);
+      font-weight: 800;
+    }
+    .phase-card strong { display: block; font-family: var(--serif); font-size: 1rem; line-height: 1.25; }
+    .phase-card small { display: block; margin-top: .25rem; color: var(--muted); font-size: .78rem; line-height: 1.35; }
 
-/* ══ SCRIPT CARDS ══ */
-.script-card{
-  background:var(--bg-card);
-  border:1px solid var(--border-light);
-  border-radius:14px;
-  margin-top:12px;
-  overflow:hidden;
-}
-.script-card-header{
-  display:flex;align-items:center;gap:10px;
-  padding:16px;cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
-  user-select:none;min-height:54px;
-}
-.script-card-header .sc-num{
-  width:28px;height:28px;border-radius:50%;
-  background:var(--accent);color:var(--bg);
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:700;flex-shrink:0;
-}
-.script-card-header h3{
-  font-family:'Playfair Display',serif;font-size:16px;font-weight:500;
-  color:var(--text);flex:1;
-}
-.script-card-header .sc-arrow{
-  font-size:13px;color:var(--text-light);
-  transition:transform .3s cubic-bezier(.4,0,.2,1);padding:4px;
-}
-.script-card.open .sc-arrow{transform:rotate(180deg);color:var(--accent)}
-.script-card-body{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
-.script-card.open .script-card-body{max-height:5000px;transition:max-height .6s cubic-bezier(.4,0,.2,1)}
-.script-card-content{padding:0 16px 18px}
+    .phase-view {
+      width: min(100%, 58rem);
+      margin: 0 auto;
+      padding: 0 1rem 5rem;
+    }
+    .back-bar {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin: 0 -1rem 1rem;
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--line);
+      background: rgba(21, 20, 18, .94);
+      backdrop-filter: blur(12px);
+    }
+    .back-button {
+      min-height: 2.75rem;
+      padding: .6rem .85rem;
+      cursor: pointer;
+      color: var(--gold-light);
+      border: 1px solid var(--line);
+      border-radius: .7rem;
+      background: var(--surface);
+      font-weight: 700;
+    }
+    .phase-title { min-width: 0; font-family: var(--serif); font-size: 1.05rem; font-weight: 600; }
+    .section-intro {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: .95rem;
+    }
 
-/* ══ SCRIPT BLOCKS ══ */
-.script-block{
-  background:var(--bg-script);border:1px solid var(--border);
-  border-radius:12px;padding:16px;margin-bottom:8px;
-  white-space:pre-wrap;font-size:15px;line-height:1.75;color:var(--text);
-}
-.script-label{
-  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
-  color:var(--accent);letter-spacing:.1em;text-transform:uppercase;
-  margin-bottom:8px;margin-top:18px;
-}
-.script-label:first-child{margin-top:0}
+    .flow {
+      display: grid;
+      gap: .65rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--bg-raised);
+    }
+    .flow-step { display: flex; align-items: flex-start; gap: .75rem; }
+    .flow-step span {
+      display: grid;
+      width: 1.65rem;
+      height: 1.65rem;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: .75rem;
+      font-weight: 800;
+    }
+    .flow-step p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .flow-step strong { color: var(--text); }
 
-/* ══ COPY BUTTON ══ */
-.copy-btn{
-  display:flex;align-items:center;justify-content:center;
-  width:100%;min-height:50px;margin-top:8px;margin-bottom:4px;
-  background:var(--accent);color:var(--bg);border:none;
-  border-radius:12px;font-size:13.5px;font-weight:700;
-  font-family:'Inter',sans-serif;cursor:pointer;
-  transition:all .2s ease;letter-spacing:.04em;text-transform:uppercase;
-  -webkit-tap-highlight-color:transparent;
-}
-.copy-btn:active{background:var(--accent-dark);transform:scale(.96)}
-.copy-btn.copied{background:var(--success);color:var(--white);transform:scale(1.02)}
+    .script-card {
+      overflow: hidden;
+      margin-top: .75rem;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+    .script-toggle {
+      display: grid;
+      width: 100%;
+      min-height: 3.75rem;
+      grid-template-columns: 2rem minmax(0, 1fr) auto;
+      align-items: center;
+      gap: .65rem;
+      padding: .8rem 1rem;
+      cursor: pointer;
+      color: var(--text);
+      text-align: left;
+      border: 0;
+      background: transparent;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .script-toggle:hover { background: rgba(255, 255, 255, .025); }
+    .script-index {
+      display: grid;
+      width: 1.8rem;
+      height: 1.8rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--bg);
+      font-size: .72rem;
+      font-weight: 800;
+    }
+    .script-toggle strong { min-width: 0; font-family: var(--serif); font-size: 1rem; font-weight: 600; }
+    .toggle-hint { color: var(--gold); font-size: .75rem; font-weight: 700; }
+    .toggle-arrow { display: inline-block; margin-left: .2rem; transition: transform .2s ease; }
+    .script-toggle[aria-expanded="true"] .toggle-arrow { transform: rotate(180deg); }
+    .script-content { padding: 0 1rem 1rem; }
+    .script-label {
+      margin: .9rem 0 .4rem;
+      color: var(--gold);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .script-text {
+      margin: 0;
+      padding: 1rem;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      border: 1px solid var(--line);
+      border-radius: .8rem;
+      background: var(--script);
+      color: var(--text);
+      font: inherit;
+      font-size: .98rem;
+      line-height: 1.72;
+    }
+    .copy-button {
+      width: 100%;
+      min-height: 3rem;
+      margin-top: .55rem;
+      cursor: pointer;
+      color: #17130d;
+      border: 0;
+      border-radius: .75rem;
+      background: var(--gold);
+      font-size: .86rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: background .18s ease, transform .18s ease;
+    }
+    .copy-button:hover { background: var(--gold-light); }
+    .copy-button:active { transform: scale(.985); }
+    .copy-button.copied { background: var(--success); color: #0d1a11; }
 
-/* ══ GUIDE / NOTE / OBJECTION BOXES ══ */
-.guide-box{
-  background:var(--bg-script);border:1px solid var(--border);
-  border-radius:12px;padding:14px;margin-top:12px;
-  font-size:14px;line-height:1.7;
-}
-.guide-box .item{margin-bottom:8px}.guide-box .item:last-child{margin-bottom:0}
-.note-box{
-  background:rgba(212,185,92,.08);border:1px solid rgba(212,185,92,.2);
-  border-radius:12px;padding:14px;margin-top:12px;
-  font-size:14px;line-height:1.65;
-}
-.note-box strong{color:var(--warning)}
-.objection-card{
-  background:var(--bg-script);border:1px solid var(--border);
-  border-radius:12px;padding:14px;margin-bottom:12px;
-}
-.objection-card .objection-q{
-  font-size:14px;font-weight:600;color:var(--danger);margin-bottom:10px;
-  padding-bottom:10px;border-bottom:1px solid var(--border-light);
-}
-.objection-card .objection-a{font-size:15px;line-height:1.65;color:var(--text)}
+    .note, .warning, .confirmed {
+      margin-top: .75rem;
+      padding: .9rem 1rem;
+      border-radius: .8rem;
+      font-size: .9rem;
+    }
+    .note { border: 1px solid var(--line); background: var(--bg-raised); color: var(--muted); }
+    .warning { border: 1px solid rgba(224, 184, 93, .32); background: rgba(224, 184, 93, .08); color: #e9d7ad; }
+    .confirmed { border: 1px solid rgba(119, 181, 138, .32); background: rgba(119, 181, 138, .08); color: #c7dfce; }
+    .note strong, .warning strong, .confirmed strong { color: var(--text); }
 
-/* ══ RULES ══ */
-.rules-card{
-  background:var(--bg-script);border:1.5px solid var(--accent-dark);
-  border-radius:14px;padding:20px 16px;margin-top:8px;
-}
-.rules-card h3{
-  font-family:'Playfair Display',serif;font-size:17px;font-weight:500;
-  color:var(--accent);margin-bottom:16px;text-align:center;
-}
-.rule{
-  margin-bottom:14px;font-size:14px;line-height:1.65;
-  display:flex;align-items:flex-start;gap:10px;
-}
-.rule:last-child{margin-bottom:0}
-.rule strong{color:var(--accent)}
-.rule-num{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-width:24px;height:24px;border-radius:50%;
-  background:var(--accent);color:var(--bg);
-  font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px;
-}
+    .facts { display: grid; gap: .65rem; }
+    .fact {
+      padding: .85rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .8rem;
+      background: var(--script);
+    }
+    .fact strong { display: block; color: var(--gold-light); font-size: .85rem; }
+    .fact span { display: block; margin-top: .18rem; color: var(--muted); }
 
-/* ══ FUNNEL VISUAL ══ */
-.funnel-visual{margin:12px 0;padding:14px;background:var(--bg-card);border-radius:14px;border:1px solid var(--border)}
-.funnel-step-mini{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border-light)}
-.funnel-step-mini:last-child{border-bottom:none}
-.funnel-step-mini .step-num{
-  width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--bg);
-  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;
-}
-.funnel-step-mini .step-text{font-size:13.5px;flex:1;line-height:1.5}
-.funnel-step-mini .step-text strong{color:var(--accent)}
+    .footer {
+      padding: 2rem 1rem calc(2rem + env(safe-area-inset-bottom, 0px));
+      text-align: center;
+      border-top: 1px solid var(--line-soft);
+      color: var(--dim);
+      font-size: .78rem;
+    }
+    .footer strong { display: block; color: var(--gold); letter-spacing: .12em; }
+    .toast {
+      position: fixed;
+      z-index: 50;
+      right: 1rem;
+      bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+      left: 1rem;
+      max-width: 24rem;
+      margin: 0 auto;
+      padding: .8rem 1rem;
+      border: 1px solid rgba(119, 181, 138, .45);
+      border-radius: .8rem;
+      background: #223329;
+      color: #e6f4e9;
+      text-align: center;
+      box-shadow: var(--shadow);
+      font-size: .9rem;
+    }
 
-/* ══ SECTION INTRO ══ */
-.section-intro{
-  padding:16px 0 4px;font-size:14px;color:var(--text-muted);line-height:1.6;
-}
-
-/* ══ FOOTER ══ */
-.app-footer{
-  text-align:center;padding:32px 20px;
-  font-size:12px;color:var(--text-light);
-  border-top:1px solid var(--border);
-  margin-top:40px;
-  letter-spacing:.02em;line-height:1.6;
-}
-.app-footer .footer-brand{
-  color:var(--accent);font-family:'Playfair Display',serif;
-  font-size:13px;font-weight:500;letter-spacing:.1em;
-}
-
-/* ══ iPAD (768px+) ══ */
-@media(min-width:768px){
-  .phase-grid{grid-template-columns:1fr 1fr 1fr;gap:16px;padding:24px;max-width:720px}
-  .phase-card{min-height:140px;padding:24px 20px}
-  .phase-card .phase-icon{width:50px;height:50px;font-size:22px}
-  .phase-card .phase-label{font-size:14.5px}
-  .phase-view{max-width:720px;padding:0 24px 120px}
-  .back-bar{margin:0 -24px;padding-left:24px;padding-right:24px}
-  .script-block{font-size:15.5px}
-  .vagas-banner h2{font-size:18px}
-  .app-header h1{font-size:26px}
-  .objections-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-}
-
-/* ══ DESKTOP SAFETY ══ */
-@media(min-width:1024px){
-  .phase-grid{max-width:800px}
-  .phase-view{max-width:800px}
-}
-</style>
+    @media (min-width: 44rem) {
+      .app-header { padding-top: 2.7rem; }
+      .quick-start { grid-template-columns: 1.1fr .9fr; }
+      .phase-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .phase-card { min-height: 9.25rem; padding: 1.15rem; }
+      .phase-view { padding-right: 1.5rem; padding-left: 1.5rem; }
+      .back-bar { margin-right: -1.5rem; margin-left: -1.5rem; padding-right: 1.5rem; padding-left: 1.5rem; }
+      .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (min-width: 64rem) {
+      .home { padding-top: 1.5rem; }
+      .phase-card { min-height: 10rem; }
+      .script-card { border-radius: 1rem; }
+      .script-content { padding: 0 1.2rem 1.2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
 <body>
-
-<header class="app-header">
-  <div class="brand">W7M New Concept</div>
-  <h1>Guia de Atendimento</h1>
-  <p class="subtitle">Campanha Mechas Plex &middot; Toque na fase que precisa</p>
-</header>
-
-<div class="vagas-banner">
-  <h2>Mechas Plex + Finaliza&ccedil;&atilde;o &mdash; De R$ 1.460 por R$ 750</h2>
-  <p>7 a 15 de agosto de 2026 &middot; Equipe Marcio Guadagno</p>
-  <div class="vagas-pill"><span class="dot"></span>25 vagas dispon&iacute;veis</div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- HOME: PHASE GRID                    -->
-<!-- ═══════════════════════════════════ -->
-<div id="homeView">
-  <div class="phase-grid">
-
-    <div class="phase-card full-width" data-phase="funil" onclick="showPhase('funil')">
-      <div class="phase-icon">&#9783;</div>
-      <div class="phase-label">Funil Completo</div>
-      <div class="phase-count">Vis&atilde;o geral da jornada</div>
+  <header class="app-header">
+    <div class="shell">
+      <p class="brand">W7M Barra da Tijuca</p>
+      <h1>Guia comercial da Taís</h1>
+      <p>Scripts prontos para conduzir, com naturalidade, as conversas que chegam pelo Instagram.</p>
     </div>
+  </header>
 
-    <div class="phase-card" data-phase="contato" onclick="showPhase('contato')">
-      <div class="phase-icon">&#9993;</div>
-      <div class="phase-label">Primeiro Contato</div>
-      <div class="phase-count">Lead chega com &ldquo;MECHAS&rdquo;</div>
-    </div>
-
-    <div class="phase-card" data-phase="detalhes" onclick="showPhase('detalhes')">
-      <div class="phase-icon">&#9733;</div>
-      <div class="phase-label">Detalhes + Agendamento</div>
-      <div class="phase-count">Servi&ccedil;o, pre&ccedil;o, hor&aacute;rios</div>
-    </div>
-
-    <div class="phase-card" data-phase="confirmacao" onclick="showPhase('confirmacao')">
-      <div class="phase-icon">&#10003;</div>
-      <div class="phase-label">Confirma&ccedil;&atilde;o</div>
-      <div class="phase-count">Data, hora, endere&ccedil;o</div>
-    </div>
-
-    <div class="phase-card" data-phase="pos" onclick="showPhase('pos')">
-      <div class="phase-icon">&#9829;</div>
-      <div class="phase-label">P&oacute;s-agendamento</div>
-      <div class="phase-count">Lembrete + reagendamento</div>
-    </div>
-
-    <div class="phase-card" data-phase="objecoes" onclick="showPhase('objecoes')">
-      <div class="phase-icon">&#10007;</div>
-      <div class="phase-label">Obje&ccedil;&otilde;es</div>
-      <div class="phase-count">5 respostas prontas</div>
-    </div>
-
-    <div class="phase-card" data-phase="followup" onclick="showPhase('followup')">
-      <div class="phase-icon">&#8635;</div>
-      <div class="phase-label">Follow-up</div>
-      <div class="phase-count">2h, 24h, 3 dias</div>
-    </div>
-
-    <div class="phase-card" data-phase="feedback" onclick="showPhase('feedback')">
-      <div class="phase-icon">&#9734;</div>
-      <div class="phase-label">P&oacute;s-procedimento</div>
-      <div class="phase-count">Feedback 24-48h depois</div>
-    </div>
-
-    <div class="phase-card" data-phase="utils" onclick="showPhase('utils')">
-      <div class="phase-icon">&#9881;</div>
-      <div class="phase-label">Utilidades</div>
-      <div class="phase-count">Auto-reply + regras de ouro</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: FUNIL COMPLETO               -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-funil">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Funil Completo</span>
+  <div class="offer-strip">
+    <strong>Mechas + Finalização: de R$ 1.200 por R$ 750</strong>
+    <span>Atendimento humano pela equipe W7M no Instagram</span>
   </div>
 
-  <div class="section-intro">A jornada do lead, do anúncio até o serviço no salão.</div>
-
-  <div class="funnel-visual" style="margin-top:12px">
-    <div class="funnel-step-mini"><span class="step-num">1</span><span class="step-text"><strong>Anúncio Meta Ads</strong> — criativo gera desejo, CTA "Enviar mensagem"</span></div>
-    <div class="funnel-step-mini"><span class="step-num">2</span><span class="step-text"><strong>ManyChat (DM do Instagram)</strong> — automação qualifica e direciona pra W7M</span></div>
-    <div class="funnel-step-mini"><span class="step-num">3</span><span class="step-text"><strong>WhatsApp da Thaís</strong> — lead chega com "MECHAS", você acolhe e confirma interesse</span></div>
-    <div class="funnel-step-mini"><span class="step-num">4</span><span class="step-text"><strong>Detalhes + Agendamento</strong> — explica serviço, preço, datas e agenda o horário</span></div>
-    <div class="funnel-step-mini"><span class="step-num">5</span><span class="step-text"><strong>Confirmação</strong> — mensagem com data, hora, endereço completo</span></div>
-    <div class="funnel-step-mini"><span class="step-num">6</span><span class="step-text"><strong>Lembrete</strong> — 1 dia antes, confirma presença</span></div>
-    <div class="funnel-step-mini"><span class="step-num">7</span><span class="step-text"><strong>Serviço no salão</strong> — Mechas Plex + Finalização com a equipe do Marcio</span></div>
-    <div class="funnel-step-mini"><span class="step-num">8</span><span class="step-text"><strong>Pós-procedimento</strong> — 24-48h depois: feedback, avaliação Google e indicação</span></div>
-  </div>
-
-  <div class="note-box" style="margin-top:12px">
-    <strong>Importante:</strong> O lead já viu o preço no anúncio e no ManyChat. Quando chega no seu WhatsApp, já sabe o valor. Seu papel é acolher, tirar dúvidas e agendar. Não precisa "vender" — precisa facilitar.
-  </div>
-
-  <div class="guide-box" style="margin-top:12px">
-    <div class="item"><strong>Palavra-chave:</strong> O lead chega dizendo "MECHAS" (pré-preenchido pelo ManyChat). Esse é o sinal de que veio pela campanha.</div>
-    <div class="item"><strong>Equipe:</strong> O atendimento é feito pela equipe do Marcio Guadagno, não pelo Marcio pessoalmente.</div>
-    <div class="item"><strong>Sem sinal:</strong> Não tem depósito nem sinal. É só agendar.</div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: PRIMEIRO CONTATO              -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-contato">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Primeiro Contato</span>
-  </div>
-
-  <div class="section-intro">O lead chega pelo WhatsApp com a palavra "MECHAS". Responda em menos de 5 minutos.</div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>Acolhimento (lead mandou "MECHAS")</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="ct1">Oi, [nome]! Tudo bem? Eu sou a Thaís, da W7M New Concept.
-
-Vi que você se interessou pelas Mechas Plex com a equipe do Marcio Guadagno! Que bom ter você aqui.
-
-Posso te passar os detalhes e já agendar seu horário?</div>
-      <button class="copy-btn" onclick="copyScript('ct1',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Tempo:</strong> Menos de 5 minutos. Cada minuto a mais reduz a chance de conversão.
+  <main>
+    <section class="home" id="homeView" aria-labelledby="homeTitle">
+      <div class="quick-start">
+        <article class="intro-card">
+          <h2 id="homeTitle">Use na ordem da conversa</h2>
+          <p>Abra a fase que corresponde ao momento do atendimento. Antes de copiar, troque os campos entre colchetes e ajuste a resposta ao que a pessoa já contou.</p>
+        </article>
+        <article class="assumption-card">
+          <h2>Premissas deste guia</h2>
+          <ul>
+            <li>A oferta confirmada é Mechas + Finalização, de R$ 1.200 por R$ 750.</li>
+            <li>Agenda, duração, pagamento, profissional e compatibilidade técnica precisam de confirmação.</li>
+            <li>O intervalo dos retornos segue a rotina definida pela equipe.</li>
+          </ul>
+        </article>
       </div>
-    </div></div>
-  </div>
 
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">2</span>
-      <h3>Se o lead n&atilde;o mandou "MECHAS" mas perguntou sobre mechas</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="ct2">Oi, [nome]! Tudo bem? Eu sou a Thaís, da W7M New Concept.
+      <nav class="phase-grid" aria-label="Fases do atendimento">
+        <button class="phase-card" type="button" data-phase="visao">
+          <span class="phase-number">01</span>
+          <span><strong>Visão geral</strong><small>O caminho da conversa</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="contato">
+          <span class="phase-number">02</span>
+          <span><strong>Primeiro contato</strong><small>Acolher sem parecer resposta pronta</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="qualificacao">
+          <span class="phase-number">03</span>
+          <span><strong>Qualificação</strong><small>Entender cabelo, desejo e histórico</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="oferta">
+          <span class="phase-number">04</span>
+          <span><strong>Apresentar a oferta</strong><small>Falar apenas do que está confirmado</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="agenda">
+          <span class="phase-number">05</span>
+          <span><strong>Agenda e fechamento</strong><small>Consultar, confirmar e registrar</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="confirmacao">
+          <span class="phase-number">06</span>
+          <span><strong>Confirmação</strong><small>Agendamento e lembrete</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="objecoes">
+          <span class="phase-number">07</span>
+          <span><strong>Objeções</strong><small>Sete respostas para dúvidas comuns</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="followup">
+          <span class="phase-number">08</span>
+          <span><strong>Follow-up</strong><small>Três retornos sem pressão</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="pos">
+          <span class="phase-number">09</span>
+          <span><strong>Pós-atendimento</strong><small>Satisfação, reclamação e indicação</small></span>
+        </button>
+        <button class="phase-card" type="button" data-phase="utilidades">
+          <span class="phase-number">10</span>
+          <span><strong>Utilidades</strong><small>Ausência, checagens e regras de ouro</small></span>
+        </button>
+      </nav>
+    </section>
 
-Você tá perguntando sobre a ação especial de Mechas Plex + Finalização com a equipe do Marcio Guadagno? Se sim, posso te contar tudo e já agendar!</div>
-      <button class="copy-btn" onclick="copyScript('ct2',this)">Copiar</button>
-    </div></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: DETALHES + AGENDAMENTO       -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-detalhes">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Detalhes + Agendamento</span>
-  </div>
-
-  <div class="section-intro">Explique o que está incluído, o preço, as datas disponíveis e agende.</div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>Apresentar o servi&ccedil;o + pre&ccedil;o</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="dt1">[nome], a ação é assim:
-
-Mechas Plex + Finalização com a equipe do Marcio Guadagno.
-
-O Plex é uma tecnologia que protege o fio durante todo o procedimento de descoloração. Seu cabelo sai com cor, movimento e saúde.
-
-O valor normal é R$ 1.460. Nessa ação especial, sai por R$ 750.
-
-São 25 vagas, disponíveis de 7 a 15 de agosto. E não precisa deixar sinal — é só agendar.
-
-Quer que eu veja os horários disponíveis pra você?</div>
-      <button class="copy-btn" onclick="copyScript('dt1',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">2</span>
-      <h3>Apresentar hor&aacute;rios</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="dt2">[nome], temos horários disponíveis nos seguintes dias:
-
-[listar 2-3 opções de dia/horário]
-
-Qual funciona melhor pra você?</div>
-      <button class="copy-btn" onclick="copyScript('dt2',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Dica:</strong> Sempre ofereça 2 a 3 opções de horário. Isso facilita a decisão e evita que o lead fique "pensando". Se não tiver a agenda na mão, diga que vai confirmar com a equipe e retorna em minutos.
+    <section class="phase-view" id="phase-visao" data-title="Visão geral" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Visão geral</span></div>
+      <p class="section-intro">O objetivo é levar a conversa do interesse inicial até a consulta de agenda, sempre no Instagram da W7M.</p>
+      <div class="flow">
+        <div class="flow-step"><span>1</span><p><strong>Acolha.</strong> Use o nome da pessoa e reconheça o interesse.</p></div>
+        <div class="flow-step"><span>2</span><p><strong>Entenda.</strong> Faça poucas perguntas por mensagem.</p></div>
+        <div class="flow-step"><span>3</span><p><strong>Contextualize a foto.</strong> Explique por que ela ajuda antes de pedir.</p></div>
+        <div class="flow-step"><span>4</span><p><strong>Apresente a oferta.</strong> Informe serviço, valores e unidade.</p></div>
+        <div class="flow-step"><span>5</span><p><strong>Consulte a equipe.</strong> Confirme agenda e qualquer condição operacional.</p></div>
+        <div class="flow-step"><span>6</span><p><strong>Feche no Instagram.</strong> Registre dia, horário e orientações validadas.</p></div>
       </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">3</span>
-      <h3>Lead escolheu o hor&aacute;rio</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="dt3">Perfeito, [nome]! Vou reservar seu horário agora.
-
-Só pra confirmar: [dia], às [horário], Mechas Plex + Finalização com a equipe do Marcio Guadagno na W7M New Concept. Tudo certo?</div>
-      <button class="copy-btn" onclick="copyScript('dt3',this)">Copiar</button>
-    </div></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: CONFIRMAÇÃO                  -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-confirmacao">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Confirma&ccedil;&atilde;o</span>
-  </div>
-
-  <div class="section-intro">Após o lead confirmar o horário, envie a mensagem de confirmação com todos os dados.</div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>Mensagem de confirma&ccedil;&atilde;o</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="cf1">Pronto, [nome]! Seu horário está confirmado:
-
-&#128197; [dia], às [horário]
-&#9986; Mechas Plex + Finalização
-&#128176; R$ 750 (valor promocional)
-&#128105;&#8205;&#127912; Equipe Marcio Guadagno
-
-&#128205; W7M New Concept
-Av. das Américas, 3301 — Bl 2, Loja 106
-Barra da Tijuca, RJ — CEP 22631-003
-
-Não precisa deixar sinal. É só comparecer no dia e horário.
-
-Te esperamos!</div>
-      <button class="copy-btn" onclick="copyScript('cf1',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Confira antes de enviar:</strong> Substitua [dia] e [horário]. Revise se a data está dentro do período da ação (7 a 15 de agosto).
-      </div>
-    </div></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: PÓS-AGENDAMENTO              -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-pos">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">P&oacute;s-agendamento</span>
-  </div>
-
-  <div class="section-intro">Lembrete na véspera e protocolo pra cancelamento ou reagendamento.</div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>Lembrete (1 dia antes)</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="ps1">Oi, [nome]! Passando pra lembrar do seu horário amanhã, [dia], às [horário], na W7M New Concept.
-
-&#128205; Av. das Américas, 3301 — Bl 2, Loja 106 — Barra da Tijuca
-
-Tudo certo pra você?</div>
-      <button class="copy-btn" onclick="copyScript('ps1',this)">Copiar</button>
-
-      <div class="guide-box">
-        <div class="item">&#x1F7E2; Respondeu "sim" ou confirmou = tudo certo, deseje um bom dia amanhã</div>
-        <div class="item">&#x1F7E1; N&atilde;o respondeu = mande novamente no dia, 2h antes do hor&aacute;rio</div>
-        <div class="item">&#x1F534; Quer cancelar ou reagendar = use o script abaixo</div>
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">2</span>
-      <h3>Cancelamento / Reagendamento</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-
-      <p class="script-label">Se quer reagendar</p>
-      <div class="script-block" id="ps2">Sem problema, [nome]! Vou verificar outros horários disponíveis pra você.
-
-Lembrando que a ação vai até 15 de agosto. Temos [opções de horário]. Algum desses funciona?</div>
-      <button class="copy-btn" onclick="copyScript('ps2',this)">Copiar</button>
-
-      <p class="script-label">Se quer cancelar</p>
-      <div class="script-block" id="ps3">Entendo, [nome]. Sem problema. Vou liberar seu horário.
-
-Se mudar de ideia, me avisa que vejo se ainda tem vaga disponível na ação. Foi um prazer te atender!</div>
-      <button class="copy-btn" onclick="copyScript('ps3',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">3</span>
-      <h3>Lembrete no dia (2h antes)</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="ps4">Oi, [nome]! Só confirmando: seu horário é hoje às [horário] na W7M New Concept. Te esperamos!</div>
-      <button class="copy-btn" onclick="copyScript('ps4',this)">Copiar</button>
-    </div></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: OBJEÇÕES                     -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-objecoes">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Obje&ccedil;&otilde;es</span>
-  </div>
-
-  <div class="section-intro">Respostas prontas para as objeções mais comuns. Toque para expandir.</div>
-
-  <div class="objections-grid">
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num" style="background:var(--danger);color:var(--white)">$</span>
-      <h3>&ldquo;T&aacute; caro&rdquo;</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="obj1">Entendo, [nome]. O valor normal desse serviço é R$ 1.460. Na ação especial sai por R$ 750, que é praticamente metade do preço.
-
-A tecnologia Plex protege o fio durante todo o procedimento e a finalização está incluída. É um pacote completo com a equipe do Marcio Guadagno.
-
-Se tiver interesse, posso reservar seu horário. A ação vai até 15 de agosto.</div>
-      <button class="copy-btn" onclick="copyScript('obj1',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Nunca negocie o preço.</strong> O valor é fixo. Reforce o que está incluído e o desconto que já existe.
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num" style="background:var(--danger);color:var(--white)">&#8987;</span>
-      <h3>&ldquo;Vou pensar&rdquo;</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="obj2">Claro, [nome]! Fica à vontade pra pensar.
-
-Só te aviso que são 25 vagas e a ação vai só até 15 de agosto. Quando decidir, me chama que vejo se ainda tem horário disponível pra você.</div>
-      <button class="copy-btn" onclick="copyScript('obj2',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num" style="background:var(--danger);color:var(--white)">&#128337;</span>
-      <h3>&ldquo;Quanto tempo dura?&rdquo;</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="obj3">[nome], o procedimento de Mechas Plex + Finalização dura em média de 3 a 4 horas, dependendo do comprimento e da quantidade de mechas. A equipe do Marcio cuida de cada etapa com calma pra garantir o melhor resultado.
-
-Quer que eu agende um horário pra você?</div>
-      <button class="copy-btn" onclick="copyScript('obj3',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num" style="background:var(--danger);color:var(--white)">&#9986;</span>
-      <h3>&ldquo;Posso fazer com megahair?&rdquo;</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="obj4">Pode sim, [nome]! Não tem restrição pra quem usa megahair. A equipe do Marcio avalia no dia e faz as mechas normalmente.
-
-Quer agendar?</div>
-      <button class="copy-btn" onclick="copyScript('obj4',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num" style="background:var(--danger);color:var(--white)">&#128179;</span>
-      <h3>&ldquo;Posso pagar parcelado?&rdquo;</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="obj5">[nome], as condições de pagamento você combina direto no salão no dia do atendimento. O valor da ação é R$ 750 e geralmente aceitam cartão de crédito.
-
-Quer que eu reserve seu horário?</div>
-      <button class="copy-btn" onclick="copyScript('obj5',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Se não souber a resposta exata sobre parcelamento:</strong> Diga que vai confirmar com a equipe e retorna. Nunca invente condições de pagamento.
-      </div>
-    </div></div>
-  </div>
-
-  </div><!-- /objections-grid -->
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: FOLLOW-UP                    -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-followup">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Follow-up</span>
-  </div>
-
-  <div class="section-intro">Sequência pra leads que não responderam. Respeite os intervalos.</div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>2 horas sem resposta</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fu1">Oi, [nome]! Vi que você se interessou pelas Mechas Plex. Ficou alguma dúvida? Posso te ajudar com qualquer informação.</div>
-      <button class="copy-btn" onclick="copyScript('fu1',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">2</span>
-      <h3>24 horas sem resposta</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fu2">[nome], passando de novo sobre as Mechas Plex + Finalização com a equipe do Marcio Guadagno. A ação vai até 15 de agosto e as vagas são limitadas.
-
-Se tiver interesse, é só me avisar que vejo os horários disponíveis pra você.</div>
-      <button class="copy-btn" onclick="copyScript('fu2',this)">Copiar</button>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">3</span>
-      <h3>3 dias sem resposta (último)</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fu3">Oi, [nome]! Última mensagem sobre a ação de Mechas Plex. A promoção encerra dia 15 de agosto e restam poucas vagas.
-
-Não vou mais insistir, mas se decidir, pode me chamar que vejo se ainda tem disponibilidade. Foi um prazer falar com você!</div>
-      <button class="copy-btn" onclick="copyScript('fu3',this)">Copiar</button>
-    </div></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: PÓS-PROCEDIMENTO              -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-feedback">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">P&oacute;s-procedimento</span>
-  </div>
-
-  <div class="section-intro">Mensagens para enviar 24 a 48 horas ap&oacute;s o procedimento. Coleta feedback, fortalece o v&iacute;nculo e abre porta pra indica&ccedil;&atilde;o.</div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>Feedback (24h depois)</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fb1">Oi, [nome]! Tudo bem? Passando pra saber como você tá curtindo as mechas!
-
-Como ficou o cabelo depois de lavar em casa? Tá gostando do resultado?
-
-Sua opinião é muito importante pra gente.</div>
-      <button class="copy-btn" onclick="copyScript('fb1',this)">Copiar</button>
-
-      <div class="guide-box">
-        <div class="item">&#x1F7E2; Respondeu positivo = use o script 2 (pedir avalia&ccedil;&atilde;o)</div>
-        <div class="item">&#x1F7E1; Respondeu com ressalva = acolha, pergunte o que incomodou, ofere&ccedil;a falar com a equipe</div>
-        <div class="item">&#x1F534; Respondeu negativo = acolha, pe&ccedil;a desculpas e ofere&ccedil;a solu&ccedil;&atilde;o (ver script 4)</div>
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">2</span>
-      <h3>Feedback positivo &mdash; pedir avalia&ccedil;&atilde;o</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fb2">Que bom saber, [nome]! Fico muito feliz que tenha gostado.
-
-Se puder deixar uma avaliaçãozinha pra gente no Google, ajuda demais. É rapidinho, só clicar aqui:
-
-[link da avaliação Google]
-
-Obrigada de coração!</div>
-      <button class="copy-btn" onclick="copyScript('fb2',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Substitua [link da avalia&ccedil;&atilde;o Google]</strong> pelo link direto de avalia&ccedil;&atilde;o do Google Maps da W7M New Concept. Pe&ccedil;a esse link ao gestor se n&atilde;o tiver.
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">3</span>
-      <h3>Indica&ccedil;&atilde;o</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fb3">[nome], se tiver alguma amiga que também queira fazer mechas com a equipe do Marcio, pode mandar falar comigo! Ainda temos vagas na ação até dia 15 de agosto.</div>
-      <button class="copy-btn" onclick="copyScript('fb3',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Timing:</strong> Envie essa mensagem logo ap&oacute;s o feedback positivo, na mesma conversa. Se a cliente respondeu bem, esse &eacute; o melhor momento pra pedir indica&ccedil;&atilde;o.
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">4</span>
-      <h3>Feedback negativo &mdash; acolher e resolver</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="fb4">[nome], sinto muito que não tenha ficado como você esperava. Sua satisfação é muito importante pra gente.
-
-Pode me contar o que te incomodou? Vou falar com a equipe do Marcio pra ver a melhor forma de resolver isso pra você.</div>
-      <button class="copy-btn" onclick="copyScript('fb4',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Nunca discuta com a cliente.</strong> Acolha, registre a queixa e repasse pro gestor ou pra equipe do Marcio. N&atilde;o prometa retoque ou reembolso por conta pr&oacute;pria.
-      </div>
-    </div></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════ -->
-<!-- PHASE: UTILIDADES                    -->
-<!-- ═══════════════════════════════════ -->
-<div class="phase-view" id="phase-utils">
-  <div class="back-bar">
-    <button class="back-btn" onclick="goHome()">&#8592; Voltar</button>
-    <span class="phase-title">Utilidades</span>
-  </div>
-
-  <div class="script-card open">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">1</span>
-      <h3>Mensagem autom&aacute;tica (auto-reply)</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="script-block" id="ut1">Oi! Que bom que você chegou até aqui. Recebi sua mensagem e vou te responder em poucos minutos. Obrigada pela paciência!</div>
-      <button class="copy-btn" onclick="copyScript('ut1',this)">Copiar</button>
-
-      <div class="note-box">
-        <strong>Configure no WhatsApp Business:</strong> Use essa mensagem como resposta automática fora do horário ou quando estiver ocupada. Mas responda de verdade o mais rápido possível.
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num" style="background:var(--accent-dark)">&#9733;</span>
-      <h3>Regras de ouro</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="rules-card">
-        <h3>Regras de ouro do atendimento</h3>
-        <div class="rule"><span class="rule-num">1</span><span><strong>Responder em menos de 5 minutos.</strong> Lead quente esfria rápido. Cada minuto reduz a chance de agendar.</span></div>
-        <div class="rule"><span class="rule-num">2</span><span><strong>Usar o nome da cliente sempre.</strong> Gera conexão imediata e faz a conversa parecer pessoal.</span></div>
-        <div class="rule"><span class="rule-num">3</span><span><strong>Escassez real.</strong> 25 vagas e prazo até 15 de agosto. Não invente números. Se as vagas acabaram, acabaram.</span></div>
-        <div class="rule"><span class="rule-num">4</span><span><strong>Nunca negociar o preço.</strong> R$ 750 é o valor da ação. Reforce o desconto (de R$ 1.460) e o que está incluído.</span></div>
-        <div class="rule"><span class="rule-num">5</span><span><strong>Seguir a ordem de apresentação.</strong> Acolher &#8594; Explicar serviço &#8594; Preço &#8594; Horários &#8594; Agendar. Não pule etapas.</span></div>
-        <div class="rule"><span class="rule-num">6</span><span><strong>Nunca copiar e colar sem personalizar.</strong> Substitua [nome], [dia], [horário] antes de enviar.</span></div>
-        <div class="rule"><span class="rule-num">7</span><span><strong>É equipe do Marcio, não o Marcio.</strong> O atendimento é feito pela equipe. Nunca diga que o Marcio vai atender pessoalmente.</span></div>
-        <div class="rule"><span class="rule-num">8</span><span><strong>Sem sinal.</strong> Não peça depósito ou pagamento antecipado. O pagamento é no dia, no salão.</span></div>
-      </div>
-    </div></div>
-  </div>
-
-  <div class="script-card">
-    <div class="script-card-header" onclick="toggleCard(this)">
-      <span class="sc-num">3</span>
-      <h3>Dados r&aacute;pidos da campanha</h3>
-      <span class="sc-arrow">&#9662;</span>
-    </div>
-    <div class="script-card-body"><div class="script-card-content">
-      <div class="guide-box">
-        <div class="item"><strong>Servi&ccedil;o:</strong> Mechas Plex + Finaliza&ccedil;&atilde;o</div>
-        <div class="item"><strong>Pre&ccedil;o original:</strong> R$ 1.460</div>
-        <div class="item"><strong>Pre&ccedil;o da a&ccedil;&atilde;o:</strong> R$ 750</div>
-        <div class="item"><strong>Per&iacute;odo:</strong> 7 a 15 de agosto de 2026</div>
-        <div class="item"><strong>Vagas:</strong> 25</div>
-        <div class="item"><strong>Equipe:</strong> Equipe do Marcio Guadagno</div>
-        <div class="item"><strong>Sinal:</strong> N&atilde;o &eacute; necess&aacute;rio</div>
-        <div class="item"><strong>Megahair:</strong> Sem restri&ccedil;&atilde;o</div>
-        <div class="item"><strong>Endere&ccedil;o:</strong> Av. das Am&eacute;ricas, 3301 — Bl 2, Loja 106 — Barra da Tijuca, RJ — 22631-003</div>
-        <div class="item"><strong>Palavra-chave:</strong> MECHAS</div>
-      </div>
-    </div></div>
-  </div>
-</div>
-
-<!-- ══ FOOTER ══ -->
-<footer class="app-footer">
-  <div class="footer-brand">W7M NEW CONCEPT</div>
-  <div style="margin-top:6px">Equipe Marcio Guadagno &middot; W7M New Concept &middot; Avantis &middot; Agosto 2026</div>
-</footer>
-
-<script>
-function showPhase(id){
-  document.getElementById('homeView').style.display='none';
-  document.querySelectorAll('.phase-view').forEach(function(v){v.classList.remove('active')});
-  var target=document.getElementById('phase-'+id);
-  if(target){
-    target.classList.add('active');
-    window.scrollTo({top:0,behavior:'instant'});
-  }
-}
-function goHome(){
-  document.querySelectorAll('.phase-view').forEach(function(v){v.classList.remove('active')});
-  document.getElementById('homeView').style.display='';
-  window.scrollTo({top:0,behavior:'instant'});
-}
-function toggleCard(header){
-  var card=header.parentElement;
-  if(card.classList.contains('open')){card.classList.remove('open')}
-  else{card.classList.add('open')}
-}
-function copyScript(id,btn){
-  var el=document.getElementById(id);
-  var text=el.textContent;
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    navigator.clipboard.writeText(text).then(function(){showCopied(btn)}).catch(function(){fallbackCopy(text,btn)});
-  }else{fallbackCopy(text,btn)}
-}
-function fallbackCopy(text,btn){
-  var ta=document.createElement('textarea');
-  ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');showCopied(btn)}catch(e){}
-  document.body.removeChild(ta);
-}
-function showCopied(btn){
-  btn.textContent='Copiado! \u2713';btn.classList.add('copied');
-  setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('copied')},2000);
-}
-</script>
+      <div class="warning"><strong>Regra técnica:</strong> a conversa comercial não substitui a avaliação do cabelo. Não prometa resultado antes dessa avaliação.</div>
+    </section>
+
+    <section class="phase-view" id="phase-contato" data-title="Primeiro contato" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Primeiro contato</span></div>
+      <p class="section-intro">A primeira resposta deve reconhecer a mensagem recebida. Personalize o começo para não soar genérico.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-contato-1">
+          <span class="script-index">1</span><strong>Resposta inicial</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-contato-1">
+          <p class="script-text" id="script-contato-1">Oi, [nome]. Sou a Taís, da W7M Barra da Tijuca. Vi sua mensagem sobre Mechas + Finalização. Como está seu cabelo hoje e que mudança você está buscando?</p>
+          <button class="copy-button" type="button" data-copy="script-contato-1">Copiar mensagem</button>
+          <div class="note"><strong>Personalize:</strong> se a pessoa já explicou o que deseja, reconheça essa informação e faça só a próxima pergunta necessária.</div>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-contato-2">
+          <span class="script-index">2</span><strong>Quando a mensagem veio sem contexto</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-contato-2" hidden>
+          <p class="script-text" id="script-contato-2">Oi, [nome]. Sou a Taís, da W7M Barra da Tijuca. Você quer saber sobre a oferta de Mechas + Finalização ou tem outra dúvida sobre o atendimento?</p>
+          <button class="copy-button" type="button" data-copy="script-contato-2">Copiar mensagem</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-qualificacao" data-title="Qualificação" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Qualificação</span></div>
+      <p class="section-intro">Envie uma pergunta de cada vez. Espere a resposta antes de avançar.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-qual-1">
+          <span class="script-index">1</span><strong>Estado atual e resultado desejado</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-qual-1">
+          <p class="script-text" id="script-qual-1">Entendi, [nome]. Hoje seu cabelo está natural, colorido ou já tem mechas? E qual resultado você gostaria de alcançar?</p>
+          <button class="copy-button" type="button" data-copy="script-qual-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-qual-2">
+          <span class="script-index">2</span><strong>Pedir foto com contexto</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-qual-2" hidden>
+          <p class="script-text" id="script-qual-2">Para a equipe entender melhor o ponto de partida do seu cabelo, uma foto atual ajuda bastante. Pode me enviar uma foto de frente e outra de costas, com boa luz, se for possível?</p>
+          <button class="copy-button" type="button" data-copy="script-qual-2">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-qual-3">
+          <span class="script-index">3</span><strong>Histórico químico relevante</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-qual-3" hidden>
+          <p class="script-text" id="script-qual-3">Você fez coloração, descoloração, progressiva ou outro procedimento químico recentemente? Se sim, me conta qual foi e quando você fez.</p>
+          <button class="copy-button" type="button" data-copy="script-qual-3">Copiar mensagem</button>
+          <div class="warning"><strong>Não avalie tecnicamente pela conversa.</strong> Registre as respostas e consulte a equipe quando houver dúvida.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-oferta" data-title="Apresentar a oferta" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Apresentar a oferta</span></div>
+      <p class="section-intro">Fale do que está confirmado. Depois, conduza para a consulta de agenda.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-oferta-1">
+          <span class="script-index">1</span><strong>Oferta completa</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-oferta-1">
+          <p class="script-text" id="script-oferta-1">[nome], a oferta é Mechas + Finalização, de R$ 1.200 por R$ 750, na W7M Barra da Tijuca. O atendimento é feito pela equipe W7M. Posso consultar a agenda para você?</p>
+          <button class="copy-button" type="button" data-copy="script-oferta-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-oferta-2">
+          <span class="script-index">2</span><strong>Quando pedirem mais detalhes</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-oferta-2" hidden>
+          <p class="script-text" id="script-oferta-2">O que está confirmado é Mechas + Finalização por R$ 750 na unidade Barra da Tijuca. Sobre [dúvida da cliente], vou checar com a equipe e volto com a informação correta.</p>
+          <button class="copy-button" type="button" data-copy="script-oferta-2">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <div class="confirmed"><strong>Dados confirmados:</strong> serviço, valor anterior, valor da oferta, unidade e atendimento pela equipe W7M.</div>
+    </section>
+
+    <section class="phase-view" id="phase-agenda" data-title="Agenda e fechamento" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Agenda e fechamento</span></div>
+      <p class="section-intro">Não ofereça horário antes de consultar a equipe. Use as preferências da cliente para orientar a busca.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-agenda-1">
+          <span class="script-index">1</span><strong>Pedir preferência</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-agenda-1">
+          <p class="script-text" id="script-agenda-1">Perfeito, [nome]. Vou consultar a equipe para ver os horários disponíveis. Você tem preferência por [dia ou período]?</p>
+          <button class="copy-button" type="button" data-copy="script-agenda-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-agenda-2">
+          <span class="script-index">2</span><strong>Retorno com opção confirmada</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-agenda-2" hidden>
+          <p class="script-text" id="script-agenda-2">[nome], confirmei com a equipe e temos [dia] às [horário]. Esse horário funciona para você?</p>
+          <button class="copy-button" type="button" data-copy="script-agenda-2">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-agenda-3">
+          <span class="script-index">3</span><strong>Sem opção compatível no momento</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-agenda-3" hidden>
+          <p class="script-text" id="script-agenda-3">[nome], os horários que confirmei agora não batem com a sua preferência. Posso verificar outra possibilidade com a equipe e te retornar pelo Instagram?</p>
+          <button class="copy-button" type="button" data-copy="script-agenda-3">Copiar mensagem</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-confirmacao" data-title="Confirmação" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Confirmação</span></div>
+      <p class="section-intro">Preencha somente com informações validadas. Se houver orientação adicional, confirme antes de enviar.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-conf-1">
+          <span class="script-index">1</span><strong>Agendamento confirmado</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-conf-1">
+          <p class="script-text" id="script-conf-1">Agendamento confirmado, [nome].
+
+Serviço: Mechas + Finalização
+Valor: R$ 750
+Unidade: W7M Barra da Tijuca
+Dia: [dia]
+Horário: [horário]
+
+[orientação confirmada pela equipe]
+
+Se precisar falar com a gente, pode responder por aqui.</p>
+          <button class="copy-button" type="button" data-copy="script-conf-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-conf-2">
+          <span class="script-index">2</span><strong>Lembrete</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-conf-2" hidden>
+          <p class="script-text" id="script-conf-2">Oi, [nome]. Passando para lembrar do seu atendimento de Mechas + Finalização na W7M Barra da Tijuca: [dia], às [horário]. Está tudo certo para você?</p>
+          <button class="copy-button" type="button" data-copy="script-conf-2">Copiar mensagem</button>
+          <div class="warning"><strong>Não acrescente política de sinal.</strong> Se a cliente perguntar, consulte a equipe e responda apenas com a condição confirmada.</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-objecoes" data-title="Objeções" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Objeções</span></div>
+      <p class="section-intro">Responda à dúvida apresentada. Não empilhe argumentos nem pressione a pessoa a decidir.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-obj-1">
+          <span class="script-index">1</span><strong>Preço</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-1">
+          <p class="script-text" id="script-obj-1">Entendo, [nome]. A oferta reúne Mechas + Finalização por R$ 750. O valor anterior é R$ 1.200. Se fizer sentido para você, posso consultar a agenda da W7M Barra da Tijuca.</p>
+          <button class="copy-button" type="button" data-copy="script-obj-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-obj-2">
+          <span class="script-index">2</span><strong>“Vou pensar”</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-2" hidden>
+          <p class="script-text" id="script-obj-2">Tudo bem, [nome]. Pense com calma. Se surgir alguma dúvida sobre a oferta ou sobre o processo, pode me chamar por aqui.</p>
+          <button class="copy-button" type="button" data-copy="script-obj-2">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-obj-3">
+          <span class="script-index">3</span><strong>Duração</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-3" hidden>
+          <p class="script-text" id="script-obj-3">[nome], a duração pode variar conforme o cabelo e o trabalho necessário. Vou consultar a equipe sobre o seu caso e volto com uma orientação mais segura.</p>
+          <button class="copy-button" type="button" data-copy="script-obj-3">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-obj-4">
+          <span class="script-index">4</span><strong>Megahair</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-4" hidden>
+          <p class="script-text" id="script-obj-4">[nome], preciso confirmar com a equipe se o serviço é compatível com o seu tipo de megahair e com o estado atual do cabelo. Pode me enviar uma foto e, se souber, dizer qual técnica foi usada?</p>
+          <button class="copy-button" type="button" data-copy="script-obj-4">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-obj-5">
+          <span class="script-index">5</span><strong>Forma de pagamento</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-5" hidden>
+          <p class="script-text" id="script-obj-5">[nome], vou confirmar com a unidade as formas de pagamento disponíveis e te respondo por aqui com a informação correta.</p>
+          <button class="copy-button" type="button" data-copy="script-obj-5">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-obj-6">
+          <span class="script-index">6</span><strong>Medo de danificar o cabelo</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-6" hidden>
+          <p class="script-text" id="script-obj-6">Faz sentido ter esse cuidado, [nome]. A equipe precisa avaliar o estado do fio e seu histórico químico antes de orientar o procedimento. Se você enviar uma foto atual e contar o que já fez no cabelo, eu levo essas informações para a equipe.</p>
+          <button class="copy-button" type="button" data-copy="script-obj-6">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-obj-7">
+          <span class="script-index">7</span><strong>Pedido de atendimento pessoal por Márcio</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-obj-7" hidden>
+          <p class="script-text" id="script-obj-7">[nome], esta oferta é atendida pela equipe W7M. Posso verificar com a unidade qual profissional estará disponível para o seu caso, mas prefiro não prometer um nome antes dessa confirmação.</p>
+          <button class="copy-button" type="button" data-copy="script-obj-7">Copiar mensagem</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-followup" data-title="Follow-up" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Follow-up</span></div>
+      <p class="section-intro">Use os três momentos conforme a rotina interna da equipe. Pare quando a pessoa pedir ou demonstrar que não quer seguir.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-follow-1">
+          <span class="script-index">1</span><strong>Primeiro retorno</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-follow-1">
+          <p class="script-text" id="script-follow-1">Oi, [nome]. Voltei porque nossa conversa sobre Mechas + Finalização ficou em aberto. Ficou alguma dúvida que eu possa esclarecer?</p>
+          <button class="copy-button" type="button" data-copy="script-follow-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-follow-2">
+          <span class="script-index">2</span><strong>Segundo retorno</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-follow-2" hidden>
+          <p class="script-text" id="script-follow-2">[nome], se você ainda tiver interesse na oferta de Mechas + Finalização por R$ 750, posso consultar a agenda da W7M Barra da Tijuca. Quer que eu verifique?</p>
+          <button class="copy-button" type="button" data-copy="script-follow-2">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-follow-3">
+          <span class="script-index">3</span><strong>Encerramento respeitoso</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-follow-3" hidden>
+          <p class="script-text" id="script-follow-3">Oi, [nome]. Vou encerrar meus retornos para não insistir. Se quiser retomar a conversa sobre Mechas + Finalização, pode chamar a equipe W7M por aqui.</p>
+          <button class="copy-button" type="button" data-copy="script-follow-3">Copiar mensagem</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-pos" data-title="Pós-atendimento" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Pós-atendimento</span></div>
+      <p class="section-intro">Comece pela satisfação. Avaliação e indicação só entram quando a resposta for positiva.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-pos-1">
+          <span class="script-index">1</span><strong>Perguntar sobre a satisfação</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-pos-1">
+          <p class="script-text" id="script-pos-1">Oi, [nome]. Como você está se sentindo com o resultado das mechas e da finalização? Quero saber como foi sua experiência com a equipe.</p>
+          <button class="copy-button" type="button" data-copy="script-pos-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-pos-2">
+          <span class="script-index">2</span><strong>Quando houver reclamação</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-pos-2" hidden>
+          <p class="script-text" id="script-pos-2">Sinto muito que sua experiência não tenha saído como você esperava, [nome]. Pode me contar o que aconteceu e, se ajudar, enviar uma foto? Vou registrar tudo e levar para a equipe avaliar antes de te orientar sobre o próximo passo.</p>
+          <button class="copy-button" type="button" data-copy="script-pos-2">Copiar mensagem</button>
+          <div class="warning"><strong>Não prometa retoque, reembolso ou solução técnica.</strong> A equipe responsável precisa avaliar primeiro.</div>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-pos-3">
+          <span class="script-index">3</span><strong>Pedir avaliação após retorno positivo</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-pos-3" hidden>
+          <p class="script-text" id="script-pos-3">Que bom saber, [nome]. Se você se sentir à vontade, pode deixar uma avaliação sobre sua experiência neste link: [link confirmado]. Seu relato ajuda outras pessoas a conhecerem o trabalho da equipe W7M.</p>
+          <button class="copy-button" type="button" data-copy="script-pos-3">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-pos-4">
+          <span class="script-index">4</span><strong>Indicação sem pressão</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-pos-4" hidden>
+          <p class="script-text" id="script-pos-4">[nome], se alguma amiga comentar que está pensando em fazer mechas, você pode enviar o Instagram da W7M Barra da Tijuca. A equipe conversa com ela sem compromisso.</p>
+          <button class="copy-button" type="button" data-copy="script-pos-4">Copiar mensagem</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="phase-view" id="phase-utilidades" data-title="Utilidades" hidden>
+      <div class="back-bar"><button class="back-button" type="button">Voltar</button><span class="phase-title">Utilidades</span></div>
+      <p class="section-intro">Consulta rápida para responder sem assumir dados que ainda não foram validados.</p>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="true" aria-controls="panel-util-1">
+          <span class="script-index">1</span><strong>Mensagem de ausência</strong><span class="toggle-hint">Fechar <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-util-1">
+          <p class="script-text" id="script-util-1">Oi, [nome]. Recebi sua mensagem sobre Mechas + Finalização. Estou fora do atendimento agora. Assim que eu retornar, sigo a conversa com você por aqui.</p>
+          <button class="copy-button" type="button" data-copy="script-util-1">Copiar mensagem</button>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-util-2">
+          <span class="script-index">2</span><strong>Dados confirmados</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-util-2" hidden>
+          <div class="facts">
+            <div class="fact"><strong>Serviço</strong><span>Mechas + Finalização</span></div>
+            <div class="fact"><strong>Oferta</strong><span>De R$ 1.200 por R$ 750</span></div>
+            <div class="fact"><strong>Unidade</strong><span>W7M Barra da Tijuca</span></div>
+            <div class="fact"><strong>Canal</strong><span>Instagram da W7M</span></div>
+            <div class="fact"><strong>Atendimento</strong><span>Humano, feito pela Taís ou equipe W7M</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-util-3">
+          <span class="script-index">3</span><strong>Perguntas que exigem checagem</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-util-3" hidden>
+          <div class="facts">
+            <div class="fact"><strong>Agenda</strong><span>Confirmar dias e horários antes de oferecer.</span></div>
+            <div class="fact"><strong>Duração</strong><span>Consultar conforme o caso e a avaliação.</span></div>
+            <div class="fact"><strong>Pagamento</strong><span>Validar formas e condições com a unidade.</span></div>
+            <div class="fact"><strong>Megahair</strong><span>Checar técnica usada e compatibilidade.</span></div>
+            <div class="fact"><strong>Profissional</strong><span>Confirmar disponibilidade sem prometer um nome.</span></div>
+            <div class="fact"><strong>Endereço e orientações</strong><span>Enviar somente dados confirmados pela equipe.</span></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="script-card">
+        <button class="script-toggle" type="button" aria-expanded="false" aria-controls="panel-util-4">
+          <span class="script-index">4</span><strong>Regras de ouro</strong><span class="toggle-hint">Abrir <span class="toggle-arrow">⌄</span></span>
+        </button>
+        <div class="script-content" id="panel-util-4" hidden>
+          <div class="facts">
+            <div class="fact"><strong>Personalize</strong><span>Troque os campos entre colchetes e use o que a pessoa já contou.</span></div>
+            <div class="fact"><strong>Pergunte aos poucos</strong><span>Uma ou duas perguntas por mensagem são suficientes.</span></div>
+            <div class="fact"><strong>Não prometa resultado</strong><span>A avaliação técnica vem antes de qualquer garantia.</span></div>
+            <div class="fact"><strong>Confirme antes de responder</strong><span>Se o dado não estiver neste guia, consulte a equipe.</span></div>
+            <div class="fact"><strong>Sem urgência inventada</strong><span>Não mencione prazo ou disponibilidade sem validação.</span></div>
+            <div class="fact"><strong>Mantenha o contexto</strong><span>Registre preferência, histórico e dúvidas para não repetir perguntas.</span></div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>W7M BARRA DA TIJUCA</strong>
+    Guia interno para atendimento humano no Instagram
+  </footer>
+
+  <div class="toast" id="copyToast" role="status" aria-live="polite" hidden>Mensagem copiada.</div>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var home = document.getElementById('homeView');
+      var phaseViews = Array.prototype.slice.call(document.querySelectorAll('.phase-view'));
+      var phaseButtons = Array.prototype.slice.call(document.querySelectorAll('[data-phase]'));
+      var toast = document.getElementById('copyToast');
+      var toastTimer;
+
+      function scrollTop() {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      }
+
+      function showHome(updateHistory) {
+        phaseViews.forEach(function (view) { view.hidden = true; });
+        home.hidden = false;
+        document.title = 'Guia comercial da Taís | W7M Barra da Tijuca';
+        if (updateHistory) {
+          history.pushState({ view: 'home' }, '', window.location.pathname + window.location.search);
+        }
+        scrollTop();
+      }
+
+      function showPhase(id, updateHistory) {
+        var target = document.getElementById('phase-' + id);
+        if (!target) return;
+        home.hidden = true;
+        phaseViews.forEach(function (view) { view.hidden = view !== target; });
+        document.title = target.getAttribute('data-title') + ' | Guia comercial da Taís';
+        if (updateHistory) {
+          history.pushState({ view: id }, '', '#' + id);
+        }
+        scrollTop();
+        var backButton = target.querySelector('.back-button');
+        if (backButton) backButton.focus({ preventScroll: true });
+      }
+
+      phaseButtons.forEach(function (button) {
+        button.addEventListener('click', function () { showPhase(button.getAttribute('data-phase'), true); });
+      });
+
+      document.querySelectorAll('.back-button').forEach(function (button) {
+        button.addEventListener('click', function () { showHome(true); });
+      });
+
+      document.querySelectorAll('.script-toggle').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var panel = document.getElementById(button.getAttribute('aria-controls'));
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!expanded));
+          panel.hidden = expanded;
+          var label = button.querySelector('.toggle-hint');
+          label.firstChild.nodeValue = expanded ? 'Abrir ' : 'Fechar ';
+        });
+      });
+
+      function showCopied(button) {
+        var original = button.textContent;
+        button.textContent = 'Copiado';
+        button.classList.add('copied');
+        toast.hidden = false;
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          button.textContent = original;
+          button.classList.remove('copied');
+          toast.hidden = true;
+        }, 1800);
+      }
+
+      function fallbackCopy(text, button) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          if (document.execCommand('copy')) showCopied(button);
+        } finally {
+          document.body.removeChild(textarea);
+        }
+      }
+
+      document.querySelectorAll('[data-copy]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          var source = document.getElementById(button.getAttribute('data-copy'));
+          var text = source.textContent.trim();
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(function () {
+              showCopied(button);
+            }).catch(function () {
+              fallbackCopy(text, button);
+            });
+          } else {
+            fallbackCopy(text, button);
+          }
+        });
+      });
+
+      window.addEventListener('popstate', function () {
+        var id = window.location.hash.replace('#', '');
+        if (id && document.getElementById('phase-' + id)) showPhase(id, false);
+        else showHome(false);
+      });
+
+      var initial = window.location.hash.replace('#', '');
+      if (initial && document.getElementById('phase-' + initial)) showPhase(initial, false);
+    }());
+  </script>
 </body>
 </html>
